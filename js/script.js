@@ -66,4 +66,135 @@ window.onload = function(){
         $('.sw-visual-pg .swiper-pagination-bullet').eq(bulletsIndex).addClass('sw-visual-pg-active');
         bulletsIndex = _num;
     }
+
+    // mb-gnb 메뉴 코드
+    var mb_menu = $('.mb-menu');
+    var mb_gnb = $('.mb-gnb');
+    mb_menu.click(function(){
+        mb_gnb.toggleClass('mb-gnb-open');
+    });
+
+    var mb_gnb_close = $('.mb-gnb-close');
+    mb_gnb_close.click(function(e){
+        // a태그의 href 를 막는다.
+        // 웹 브라우저 갱신 되면 안되니까.
+        e.preventDefault();
+        // 메뉴닫기
+        mb_gnb.removeClass('mb-gnb-open');
+    });
+
+    // 화면 리사이징 관련
+    $(window).resize(function(){
+        // 화면의 너비
+        var winW = $(window).width();
+        if(winW > 1024) {
+            // 메뉴닫기
+            mb_gnb.removeClass('mb-gnb-open');
+        }
+    });
+    
+    // 스크롤 모션
+    $('.story-box-top').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-box-top').addClass('story-box-top-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '100%' 
+    });
+
+    $('.story-1').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-1').addClass('story-1-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+
+    $('.story-2').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-2').addClass('story-2-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+
+    
+    $('.story-3').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-3').addClass('story-3-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+    
+    $('.story-4').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-4').addClass('story-4-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+
+    
+    $('.story-5').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-5').addClass('story-5-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+
+    
+    $('.story-6').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-6').addClass('story-6-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+    
+    $('.story-7').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-7').addClass('story-7-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+    
+    $('.story-8').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-8').addClass('story-8-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+    
+    $('.story-9').waypoint(function(dir) {
+        if(dir=="down") {
+            $('.story-9').addClass('story-9-ani');
+        }else{           
+        }
+    }, 
+    { 
+        offset: '70%' 
+    });
+
 };
