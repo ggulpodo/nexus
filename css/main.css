@@ -52,6 +52,73 @@ body {
     overflow: hidden;
 }
 
+
+/* 안내창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999999;
+}
+
+.modal-cont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 550px;
+    height: 300px;
+    background: #fff;
+    border-radius: 30px 0 30px 0;
+    padding: 50px;
+}
+
+.modal-cont p {
+    position: relative;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+.modal-cont span {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.4;
+    text-align: center;
+    color: #000;
+}
+
+.modal-cont button {
+    position: relative;
+    display: block;
+    float: right;
+
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 100;
+    cursor: pointer;
+
+    margin-top: 30px;
+    border: 0;
+    line-height: 40px;
+    text-align: center;
+    padding: 0 30px;
+    border-radius: 4px;
+}
+
 /* 상단영역 */
 .header {
     position: absolute;
@@ -150,7 +217,7 @@ body {
     right: 2.5rem;
     display: none;
     width: 2.4rem;
-    height: 2.4rem;   
+    height: 2.4rem;
     cursor: pointer;
 
     color: #fff;
@@ -189,7 +256,7 @@ body {
     width: 100%;
 }
 
-.mb-gnb-list > li {
+.mb-gnb-list>li {
     border-bottom: 0.1rem solid #e5e5e5;
 }
 
@@ -197,12 +264,12 @@ body {
     border-bottom: none;
 }
 
-.mb-gnb-list > li > a {
+.mb-gnb-list>li>a {
     display: block;
     line-height: 6.5rem;
 }
 
-.mb-gnb-list > li > a:hover{
+.mb-gnb-list>li>a:hover {
     background-color: #f6f6f6;
     text-decoration: underline;
 }
@@ -227,7 +294,7 @@ body {
     .mb-menu {
         display: block;
     }
-   
+
 }
 
 /* 비주얼영역 */
@@ -281,23 +348,23 @@ body {
     background-size: cover;
 }
 
-.visual-box img { 
-    position: absolute;   
+.visual-box img {
+    position: absolute;
     left: 10.0208vw;
     top: 50%;
     transform: translateY(-50%);
 
     height: 15vh;
-    width: auto;    
-    
+    width: auto;
+
     opacity: 0;
-    transition: opacity 1.0s, left 1.0s;
+    /* transition: opacity 1.0s, left 1.0s; */
 }
 
-.sw-visual .swiper-wrapper .swiper-slide-active img {
+/* .sw-visual .swiper-wrapper .swiper-slide-active img {
     opacity: 1;
     left: 13.0208vw;
-}
+} */
 
 /* 
 .sw-visual .swiper-wrapper .swiper-slide-prev img {
@@ -307,7 +374,7 @@ body {
 } */
 
 .sw-visual-pg {
-    left: 75% !important;    
+    left: 75% !important;
     bottom: calc(50% - 5rem) !important;
     width: 0.8rem !important;
 }
@@ -379,7 +446,7 @@ body {
 
 /* 최상단 스토리 */
 @media screen and (max-width:1024px) {
-    .story-box-top {        
+    .story-box-top {
         height: 14rem;
         line-height: 14rem;
     }
@@ -521,6 +588,7 @@ body {
     transform: translateX(100%);
     transition: transform 1.0s;
 }
+
 .story-1-ani {
     transform: translateX(0);
 }
@@ -532,11 +600,12 @@ body {
 .story-2 {
     background: url('../images/story_1.jpg') no-repeat center;
     background-size: cover;
-    
+
     /* 모션코드 */
     transform: translateX(-100%);
     transition: transform 1.0s;
 }
+
 .story-2-ani {
     transform: translateX(0);
 }
@@ -562,10 +631,10 @@ body {
 
 .story-4 {
     height: 65.07vw;
-    max-height: 93.7rem;    
+    max-height: 93.7rem;
     background: url('../images/story_3.jpg') no-repeat center;
     background-size: cover;
-    
+
     /* 모션코드 */
     transform: translateX(-100%);
     transition: transform 1.0s;
@@ -590,7 +659,7 @@ body {
 .story-6 {
     background: url('../images/story_5.jpg') no-repeat center;
     background-size: cover;
-    
+
     /* 모션코드 */
     transform: translateX(-100%);
     transition: transform 1.0s;
@@ -615,7 +684,7 @@ body {
 .story-8 {
     background: #fff;
     align-content: center;
-    
+
     /* 모션코드 */
     transform: translateX(-100%);
     transition: transform 1.0s;
@@ -656,69 +725,85 @@ body {
 
 
 
-@media  screen and (max-width:1024px) {
-    .story > .container {
+@media screen and (max-width:1024px) {
+    .story>.container {
         flex-direction: row;
     }
+
     .story-box {
         width: 100%;
         height: 100vw;
-        max-width:1024px;
+        max-width: 1024px;
         max-height: 1024px;
-    }  
+    }
+
     .story-box-tit {
         font-size: 1.2rem;
         padding-top: 3rem;
     }
+
     .story-box-brand {
         padding-bottom: 3rem;
     }
+
     .story-box-desc {
         padding: 0 3rem;
         font-size: 2.4rem;
-    }    
-    .story-box-more{
+    }
+
+    .story-box-more {
         padding: 0 3rem;
         padding-top: 0;
     }
+
     .story-box-bt {
         width: 100%;
         text-align: center;
         white-space: nowrap;
     }
+
     .story-box-up {
         margin-top: 0;
-    } 
+    }
+
     .story-1 {
         order: 1;
         height: 31rem;
     }
+
     .story-2 {
         order: 2;
     }
+
     .story-3 {
         order: 3;
         height: 130.14vw;
         max-height: 133.2622rem;
     }
+
     .story-4 {
         order: 4;
         height: 130.14vw;
         max-height: 133.2622rem;
     }
+
     .story-5 {
         order: 5;
     }
+
     .story-6 {
         order: 6;
     }
+
     .story-7 {
         order: 8;
     }
+
     .story-8 {
         order: 7;
         height: 27.5rem;
     }
+
     .story-9 {
         order: 9;
         height: 12.7rem;
@@ -771,10 +856,12 @@ body {
         padding: 0 3rem;
         background-attachment: initial;
     }
+
     .gallery-tit {
         font-size: 1.2rem;
         margin-top: 6rem;
     }
+
     .gallery-desc {
         font-size: 2.4rem;
         margin-top: 3rem;
@@ -806,16 +893,18 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-    .contact {        
-    }
+    .contact {}
+
     .contact .container {
         flex-direction: column;
-        padding: 4.5rem 0;        
+        padding: 4.5rem 0;
     }
+
     .contact-box {
         font-size: 1.2rem;
         margin-bottom: 2.5rem;
     }
+
     .contact-box:last-child {
         margin-bottom: 0;
     }
@@ -960,7 +1049,7 @@ body {
     line-height: 1.7;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    
+
 }
 
 @media screen and (max-width:1024px) {
@@ -974,6 +1063,7 @@ body {
         display: block;
         padding: 4.5rem 3rem;
     }
+
     .f-top-box {
         width: 100%;
         margin-top: 2.5rem;
